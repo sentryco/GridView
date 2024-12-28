@@ -41,3 +41,5 @@ ZStack(alignment: .topLeading) {
 
 ### Todo: 
 - Add notch-marks that represents begining of margins
+- Add GH action
+- Add badge to org readme 

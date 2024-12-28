@@ -57,8 +57,8 @@ extension GridSize {
       .init(
          // totSize: .init(width: 200, height: 300),
          inset: .init(top: 40, leading: 20, bottom: 40, trailing: 20),
-         horCount: 6,
-         verCount: 4,
+         horCount: 12,
+         verCount: 16,
          verDivisionCount: 4,
          horDivisionCount: 4,
          blockWidth: 20,
