@@ -31,6 +31,18 @@ public struct GridSize {
     * vertical blocksize
     */
    public let blockHeight: CGFloat
+   /**
+    * Public init
+    */
+   public init(inset: EdgeInsets, horCount: Int, verCount: Int, verDivisionCount: Int, horDivisionCount: Int, blockWidth: CGFloat, blockHeight: CGFloat) {
+      self.inset = inset
+      self.horCount = horCount
+      self.verCount = verCount
+      self.verDivisionCount = verDivisionCount
+      self.horDivisionCount = horDivisionCount
+      self.blockWidth = blockWidth
+      self.blockHeight = blockHeight
+   }
 }
 /**
  * Const

@@ -13,39 +13,31 @@
 - ♻️ Reuse constants in GridSizing across your previews. 
 - 🤖 Auto-adjust the grid with your own multipliers that are tied to Apples dynamic resize classes
 
-### Benefits of using a grid: 
-- GridView doesn't add to your app code. Just your previews. 
-- Reduces complexity by making things more consistent across your UI code. 
-- When you know your core-grid is in alignment, it's easier to break from the grid as well. 
-- Reusing components in different parts of your app and in different contexts can often break the core grid that was intended for a component. 
-- Griddifying your smaller components, can your composite components more aesthetically pleasing.  easier discovering subtle but subconsciously noticeable UI inconsistencies.
-- Knowing where to place things is often a challenge. And grid can make it easier to choose. 
-- Typography, Colors and layout-spacing. Each adds to the impression users gets of your app. 
-- One small Ui size change can matestesize into the rest of the UI, and no matter how many corrections that are made, it all starts to look increasingly out of place 
 
-### Basic grid configuration: 
-- **Row Count**: Number of rows in the grid.
-- **Column Count**: Number of columns in the grid.
-- **Row and Column Colors**: Customize the colors of rows and columns.
-- **Gutter and Group Colors**: Customize the gutter and group colors.
-
-## Examples
-```swift
-// Input: fixedSize (view size doesnt change)
-// totHeight / totWidth
-// verGutterHeight / horGutterWidth
-// verHeight / horWidth
-// inset (x/y)
-
-// Input: dynamicSize (view size can change)
-// ?
-```
-
-
-## Customization
+### Examples:
 
 You can customize the grid by adjusting the properties in `GridSize` and `GridStyle`:
 
-- `rowGutter`, `columnGutter`: Adjust the spacing between rows and columns.
-- `rowWidth`, `columnHeight`: Set the dimensions of rows and columns.
-- `colGroupCount`, `rowGroupCount`: Define the grouping of rows and columns.
+```swift
+ZStack(alignment: .topLeading) {
+    GridView(size: .defaultSize, style: .defaultStyle)
+    VStack {
+        Text("Hello, World!")
+        Text("More text")
+    }
+}
+.frame(size: GridView.defaultSize.size)
+```
+
+### Benefits of using a grid: 
+- GridView is designed for use in previews, ensuring no additional code is introduced into your app's production codebase.
+- Simplifies your UI codebase by promoting consistency in design elements.
+- Achieving alignment with your core grid simplifies the process of intentionally deviating from it when needed for creative layouts.
+- Reusing components across various parts of your app and in different contexts may disrupt the intended core grid alignment of a component.
+- Implementing a grid structure for your smaller components enhances the visual harmony of your composite components, making it simpler to identify and rectify subtle UI inconsistencies that may not be consciously noticeable but can affect the overall user experience.
+- Deciding on the placement of elements can be daunting; utilizing a grid simplifies these decisions.
+- Typography, color schemes, and layout spacing collectively shape the user's perception of your application.
+- A single minor adjustment in UI dimensions can cascade throughout the interface, and despite numerous tweaks, the overall layout may begin to appear disjointed.
+
+### Todo: 
+- Add notch-marks that represents begining of margins

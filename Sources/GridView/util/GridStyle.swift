@@ -28,6 +28,17 @@ public struct GridStyle {
     * The stroke width for the grid and division lines.
     */
    public let strokeWidth: CGFloat
+   /**
+    * Public init
+    */
+   public init(horGridColor: Color, verGridColor: Color, horDivisionColor: Color, verDivisionColor: Color, insetColor: Color, strokeWidth: CGFloat) {
+      self.horGridColor = horGridColor
+      self.verGridColor = verGridColor
+      self.horDivisionColor = horDivisionColor
+      self.verDivisionColor = verDivisionColor
+      self.insetColor = insetColor
+      self.strokeWidth = strokeWidth
+   }
 }
 /**
  * Const

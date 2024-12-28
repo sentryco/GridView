@@ -16,9 +16,6 @@ extension GridView {
     */
    @ViewBuilder internal func drawVerticals(inset: EdgeInsets, size: CGSize, count: Int, innerCount: Int) -> some View {
       let length = GridSize.calcLength(length: size.width, inset: inset.hor, count: count)
-//      let _ = {
-//         Swift.print("length:  \(length)")
-//      }()
       ForEach(0..<count, id: \.self) { // grid
          let offset = CGFloat($0) * length
          if $0 != 0 { // dont draw first line

@@ -3,7 +3,8 @@ import HybridColor
 
 extension GridView {
    /**
-    * - Fixme: ⚠️️ Add doc
+    * The main view of the GridView.
+    * - Note: This view is responsible for rendering the grid by using the `GeometryReader` to provide the necessary size information for drawing vertical and horizontal lines, as well as the insets.
     */
    public var body: some View {
       GeometryReader { geom in
