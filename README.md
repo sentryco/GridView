@@ -1,4 +1,4 @@
-### Grid Configuration
+### GridView
 
 ### Description:
 `GridView` provides a flexible way to create grid layouts in SwiftUI. Customize it to fit your application's needs and enhance your UI with structured layouts.
