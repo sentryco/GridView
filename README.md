@@ -1,4 +1,8 @@
-### Grid Configuration
+[![Tests](https://github.com/sentryco/GridView/actions/workflows/Tests.yml/badge.svg)](https://github.com/sentryco/GridView/actions/workflows/Tests.yml)
+
+# GridView
+
+> Gridify your UI
 
 ### Description:
 `GridView` provides a flexible way to create grid layouts in SwiftUI. Customize it to fit your application's needs and enhance your UI with structured layouts.
@@ -41,5 +45,5 @@ ZStack(alignment: .topLeading) {
 
 ### Todo: 
 - Add notch-marks that represents begining of margins
-- Add GH action
-- Add badge to org readme 
+- Add GH action ✅
+- Add badge to org readme ✅
