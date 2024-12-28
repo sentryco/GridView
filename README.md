@@ -2,7 +2,7 @@
 
 # GridView
 
-> Gridify your UI's
+> Gridify your UI
 
 ### Description:
 `GridView` provides a flexible way to create grid layouts in SwiftUI. Customize it to fit your application's needs and enhance your UI with structured layouts.
@@ -45,5 +45,5 @@ ZStack(alignment: .topLeading) {
 
 ### Todo: 
 - Add notch-marks that represents begining of margins
-- Add GH action
-- Add badge to org readme 
+- Add GH action ✅
+- Add badge to org readme ✅
