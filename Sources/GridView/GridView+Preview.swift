@@ -2,7 +2,6 @@ import SwiftUI
 import HybridColor
 /**
  * Preview
- * - Fixme: ⚠️️ fix the blocksize bug. reads correct, draws wrong
  * width: (32*2) + (12*16) = 256
  * height: (48*2*) + (24*12) = 384
  * hor-div: 12/3 = 4

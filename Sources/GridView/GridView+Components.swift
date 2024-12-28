@@ -8,17 +8,17 @@ extension GridView {
     * Draw vertical lines
     * - Note: We could make this recursive. it would require a differnt geom setup. drawing more high-level. but would make the code less readable
     * - Parameters:
-    *   - inset: - Fixme: ⚠️️ Add doc
-    *   - size: - Fixme: ⚠️️ Add doc
-    *   - count: - Fixme: ⚠️️ Add doc
-    *   - innerCount: - Fixme: ⚠️️ Add doc
-    * - Returns: - Fixme: ⚠️️ Add doc
+    *   - inset: The edge insets that define the padding for the grid.
+    *   - size: The size of the grid.
+    *   - count: The number of vertical lines to be drawn in the grid.
+    *   - innerCount: The number of inner vertical lines to be drawn in each grid cell.
+    * - Returns: A SwiftUI view that represents the vertical lines of the grid.
     */
    @ViewBuilder internal func drawVerticals(inset: EdgeInsets, size: CGSize, count: Int, innerCount: Int) -> some View {
       let length = GridSize.calcLength(length: size.width, inset: inset.hor, count: count)
-      let _ = {
-         Swift.print("length:  \(length)")
-      }()
+//      let _ = {
+//         Swift.print("length:  \(length)")
+//      }()
       ForEach(0..<count, id: \.self) { // grid
          let offset = CGFloat($0) * length
          if $0 != 0 { // dont draw first line
@@ -42,13 +42,13 @@ extension GridView {
    }
    /**
     * Draw horizontal lines
-    * - Note: We could merge this into drawVerticals. and toggle on bool. but would make the code less readable
+    * - Note: We could merge this into drawVerticals and toggle on a boolean, but that would make the code less readable.
     * - Parameters:
-    *   - inset: - Fixme: ⚠️️ Add doc
-    *   - size: - Fixme: ⚠️️ Add doc
-    *   - count: - Fixme: ⚠️️ Add doc
-    *   - innerCount: - Fixme: ⚠️️ Add doc
-    * - Returns: - Fixme: ⚠️️ Add doc
+    *   - inset: The edge insets that define the padding for the grid.
+    *   - size: The size of the grid area where the lines will be drawn.
+    *   - count: The number of horizontal lines to be drawn in the grid.
+    *   - innerCount: The number of inner horizontal lines to be drawn within each grid cell.
+    * - Returns: A SwiftUI view that represents the horizontal lines of the grid.
     */
    @ViewBuilder internal func drawHorizontals(inset: EdgeInsets, size: CGSize, count: Int, innerCount: Int) -> some View {
       let length = GridSize.calcLength(length: size.height, inset: inset.ver, count: count)
@@ -75,8 +75,8 @@ extension GridView {
    }
    /**
     * Draw hor and ver insets
-    * - Parameter geom: - Fixme: ⚠️️ Add doc
-    * - Returns: - Fixme: ⚠️️ Add doc
+    * - Parameter geom: The geometry proxy of the grid view.
+    * - Returns: A SwiftUI view that represents the inset lines of the grid.
     */
    @ViewBuilder internal func drawInset(geom: GeometryProxy) -> some View {
       draw( // verLine1

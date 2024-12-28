@@ -5,7 +5,7 @@ extension GridView {
    /**
     * - Fixme: ⚠️️ Add doc
     */
-   var body: some View {
+   public var body: some View {
       GeometryReader { geom in
          drawVerticals( // draw vertical lines
             inset: size.inset,

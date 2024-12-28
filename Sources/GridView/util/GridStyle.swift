@@ -3,13 +3,31 @@ import HybridColor
 /**
  * Grid styling
  */
-struct GridStyle {
-   let horGridColor: Color
-   let verGridColor: Color
-   let horDivisionColor: Color
-   let verDivisionColor: Color
-   let insetColor: Color
-   let strokeWidth: CGFloat
+public struct GridStyle {
+   /**
+    * The color of the horizontal grid lines.
+    */
+   public let horGridColor: Color
+   /**
+    * The color of the vertical grid lines.
+    */
+   public let verGridColor: Color
+   /**
+    * The color of the horizontal division lines within grid cells.
+    */
+   public let horDivisionColor: Color
+   /**
+    * The color of the vertical division lines within grid cells.
+    */
+   public let verDivisionColor: Color
+   /**
+    * The color used for the grid's inset area.
+    */
+   public let insetColor: Color
+   /**
+    * The stroke width for the grid and division lines.
+    */
+   public let strokeWidth: CGFloat
 }
 /**
  * Const
@@ -18,7 +36,7 @@ extension GridStyle {
    /**
     * Default style
     */
-   static let defaultStyle: GridStyle = .init(
+   public static let defaultStyle: GridStyle = .init(
       horGridColor: Color.blue.opacity(0.6),
       verGridColor: Color.red.opacity(0.2),
       horDivisionColor: Color.whiteOrBlack.opacity(0.0),

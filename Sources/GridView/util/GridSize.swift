@@ -1,45 +1,47 @@
 import SwiftUI
 /**
- * - Fixme: ⚠️️ add doc
+ * `GridSize` is a structure that defines the dimensions and spacing of the grid in the GridView.
  */
-struct GridSize {
+public struct GridSize {
    /**
     * horizontal padding, vertical padding
     */
-   let inset: EdgeInsets
+   public let inset: EdgeInsets
    /**
     * number of horizontal blocks
     */
-   let horCount: Int
+   public let horCount: Int
    /**
     * number of vertical blocks
     */
-   let verCount: Int
+   public let verCount: Int
    /**
     * num of vertical inner blocks
     */
-   let verDivisionCount: Int
+   public let verDivisionCount: Int
    /**
     * num of horizontal inner blocks
     */
-   let horDivisionCount: Int
+   public let horDivisionCount: Int
    /**
     * horizontal blocksize
     */
-   let blockWidth: CGFloat
+   public let blockWidth: CGFloat
    /**
     * vertical blocksize
     */
-   let blockHeight: CGFloat
+   public let blockHeight: CGFloat
 }
 /**
  * Const
  */
 extension GridSize {
    /**
-    * - Fixme: ⚠️️ add doc
+    * The default size for the grid.
+    * This size is used when no custom size is specified.
+    * It includes default insets, block counts, division counts, and block dimensions.
     */
-   static let defaultSize: GridSize = {
+   public static let defaultSize: GridSize = {
       .init(
          // totSize: .init(width: 200, height: 300),
          inset: .init(top: 40, leading: 20, bottom: 40, trailing: 20),
@@ -57,26 +59,26 @@ extension GridSize {
  */
 extension GridSize {
    /**
-    * - Fixme: ⚠️️ add doc
+    * The total size of the grid, including insets and block dimensions.
     */
-   var size: CGSize {
+   public var size: CGSize {
       let w: CGFloat = CGFloat((self.inset.hor) + (self.blockWidth * CGFloat(self.verCount)))
       let h: CGFloat = CGFloat((self.inset.ver) + (self.blockHeight * CGFloat(self.horCount)))
       return .init(width: w, height: h)
    }
    /**
-    * - Fixme: ⚠️️ add doc
+    * The size of the divisions within the grid.
     */
-   var divLength: CGSize {
+   public var divLength: CGSize {
       .init(
          width: blockHeight / CGFloat(horDivisionCount),
          height: blockWidth / CGFloat(verDivisionCount)
       )
    }
    /**
-    * - Fixme: ⚠️️ add doc
+    * The size of each block in the grid.
     */
-   var blockSize: CGSize {
+   public var blockSize: CGSize {
       let width = Self.calcLength(
          length: self.size.width,
          inset: self.inset.hor,
@@ -90,14 +92,14 @@ extension GridSize {
       return .init(width: width, height: height)
    }
    /**
-    * block length
+    * Calculates the length of a block in the grid.
     * - Parameters:
-    *   - length: - Fixme: ⚠️️ Add doc
-    *   - inset: - Fixme: ⚠️️ Add doc
-    *   - count: - Fixme: ⚠️️ Add doc
-    * - Returns: - Fixme: ⚠️️ Add doc
+    *   - length: The total length of the grid.
+    *   - inset: The inset of the grid.
+    *   - count: The number of blocks in the grid.
+    * - Returns: The length of each block.
     */
-   static func calcLength(length: CGFloat, inset: CGFloat, count: Int) -> CGFloat {
+   public static func calcLength(length: CGFloat, inset: CGFloat, count: Int) -> CGFloat {
       let totLength: CGFloat = length - inset
       let length = totLength / CGFloat(count)
       return length

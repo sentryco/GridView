@@ -6,10 +6,10 @@ extension EdgeInsets {
    var hor: CGFloat { self.horizontal }
    var horizontal: CGFloat { self.leading + self.trailing }
    /**
-    *  - Fixme: ⚠️️ add doc
+    * Initializes an EdgeInsets with horizontal and vertical padding.
     * - Parameters:
-    *   - hor: Not total
-    *   - ver: Not total
+    *   - hor: The horizontal padding. (not total)
+    *   - ver: The vertical padding. (not total)
     */
    init(hor: CGFloat, ver: CGFloat) {
       self = .init(
