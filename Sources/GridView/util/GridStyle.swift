@@ -29,15 +29,20 @@ public struct GridStyle {
     */
    public let strokeWidth: CGFloat
    /**
+    * Notch mark color
+    */
+   public let notchColor: Color
+   /**
     * Public init
     */
-   public init(horGridColor: Color, verGridColor: Color, horDivisionColor: Color, verDivisionColor: Color, insetColor: Color, strokeWidth: CGFloat) {
+   public init(horGridColor: Color, verGridColor: Color, horDivisionColor: Color, verDivisionColor: Color, insetColor: Color, strokeWidth: CGFloat, notchColor: Color = Color.red.opacity(0.5)) {
       self.horGridColor = horGridColor
       self.verGridColor = verGridColor
       self.horDivisionColor = horDivisionColor
       self.verDivisionColor = verDivisionColor
       self.insetColor = insetColor
       self.strokeWidth = strokeWidth
+      self.notchColor = notchColor
    }
 }
 /**

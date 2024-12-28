@@ -2,6 +2,7 @@ import SwiftUI
 import HybridColor
 /**
  * Components
+ * - Note: These calculations are kind of repetative and lengthy. But shortening and reusing code introduces rigiddity and makes it harder to comprehend. So hold of for now. There might be some way to refactor cleanly but will require some effort and clever design etc
  */
 extension GridView {
    /**
@@ -18,7 +19,7 @@ extension GridView {
       let length = GridSize.calcLength(length: size.width, inset: inset.hor, count: count)
       ForEach(0..<count, id: \.self) { // grid
          let offset = CGFloat($0) * length
-         if $0 != 0 { // dont draw first line
+         if $0 != 0 { // don't draw first line
             draw( // draw verLines
                a: .init(x: inset.leading + offset, y: inset.top),
                b: .init(x: inset.leading + offset, y: inset.top + size.height - inset.ver),
@@ -51,7 +52,7 @@ extension GridView {
       let length = GridSize.calcLength(length: size.height, inset: inset.ver, count: count)
       ForEach(0..<count, id: \.self) { // grid
          let offset = CGFloat($0) * length
-         if $0 != 0 { // dont draw first line
+         if $0 != 0 { // don't draw first line
             draw( // draw horLines
                a: .init(x: inset.leading, y: inset.top + offset),
                b: .init(x: inset.leading + size.width - inset.hor, y: inset.top + offset),
@@ -96,5 +97,62 @@ extension GridView {
          b: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: size.inset.top + geom.size.height - size.inset.ver),
          color: style.insetColor
       )
+   }
+   /**
+    * - Fixme: ⚠️️ add doc
+    */
+   @ViewBuilder internal func drawNotchMarks(geom: GeometryProxy) -> some View {
+      Group { // Vertical
+         // Notch 1 (tl)
+         draw(
+            a: .init(x: size.inset.leading, y: 0),
+            b: .init(x: size.inset.leading, y: size.inset.top),
+            color: style.notchColor
+         )
+         // Notch 2 (tr)
+         draw(
+            a: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: 0),
+            b: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: size.inset.top),
+            color: style.notchColor
+         )
+         // Notch 3 (bl)
+         draw(
+            a: .init(x: size.inset.leading, y: size.inset.top + geom.size.height - size.inset.ver),
+            b: .init(x: size.inset.leading, y: geom.size.height),
+            color: style.notchColor
+         )
+         // Notch 4 (br)
+         draw(
+            a: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: size.inset.top + geom.size.height - size.inset.ver),
+            b: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: geom.size.height),
+            color: style.notchColor
+         )
+      }
+      Group { // horizontal
+         // Notch 1 (tl)
+         draw(
+            a: .init(x: 0, y: size.inset.top),
+            b: .init(x: size.inset.leading, y: size.inset.top),
+            color: style.notchColor
+         )
+         // Notch 2 (tr)
+         draw(
+            a: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: size.inset.top),
+            b: .init(x: geom.size.width, y: size.inset.top),
+            color: style.notchColor
+         )
+         // Notch 3 (bl)
+         draw(
+            a: .init(x: 0, y: size.inset.top + geom.size.height - size.inset.ver),
+            b: .init(x: size.inset.leading, y: size.inset.top + geom.size.height - size.inset.ver),
+            color: style.notchColor
+         )
+         // Notch 4 (br)
+         draw(
+            a: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: size.inset.top + geom.size.height - size.inset.ver),
+            b: .init(x: geom.size.width, y: size.inset.top + geom.size.height - size.inset.ver),
+            color: style.notchColor
+         )
+      }
    }
 }

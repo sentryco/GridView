@@ -44,6 +44,6 @@ ZStack(alignment: .topLeading) {
 - A single minor adjustment in UI dimensions can cascade throughout the interface, and despite numerous tweaks, the overall layout may begin to appear disjointed.
 
 ### Todo: 
-- Add notch-marks that represents begining of margins
 - Add GH action ✅
 - Add badge to org readme ✅
+- Add notch-marks that represents begining of margins ✅
