@@ -2,7 +2,7 @@ import SwiftUI
 /**
  * - Fixme: ⚠️️ add doc to each var
  */
-struct GridSize {
+struct GrdSize {
     var rowGutter: CGFloat = 10 // - Fixme: ⚠️️ rename to horGutter
     var columnGutter: CGFloat = 10 // - Fixme: ⚠️️ rename to verGutter
     var rowWidth: CGFloat = 1

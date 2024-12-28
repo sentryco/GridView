@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct GridView: View {
-    var size: GridSize
-    var style: GridStyle
+struct GrdView: View {
+    var size: GrdSize
+    var style: GrdStyle
     
     var body: some View {
         GeometryReader { geometry in
@@ -79,7 +79,7 @@ struct GridView: View {
    }
 }
 #Preview(traits: .fixedLayout(width: 360, height: 548)) {
-   let gridSize = GridSize(
+   let gridSize = GrdSize(
       rowGutter: 20,
       columnGutter: 20,
       rowWidth: 40,
@@ -89,7 +89,7 @@ struct GridView: View {
       colGroupCount: 1,
       rowGroupCount: 1
    )
-   let gridStyle = GridStyle(
+   let gridStyle = GrdStyle(
       gutterColor: .gray,
       rowColor: .green,
       columnColor: .blue,
@@ -110,7 +110,7 @@ struct GridView: View {
       }
       .padding(.vertical, gridSize.rowGutter)
       .padding(.horizontal, gridSize.columnGutter)
-      GridView(
+      GrdView(
          size: gridSize,
          style: gridStyle
       )

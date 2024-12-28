@@ -2,7 +2,7 @@ import SwiftUI
 /**
  * - Fixme: ⚠️️ add doc to each var
  */
-struct GridStyle {
+struct GrdStyle {
     var gutterColor: Color = .green
     var rowColor: Color = Color.red.opacity(0.4)
     var columnColor: Color = Color.red.opacity(0.4)

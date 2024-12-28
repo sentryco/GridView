@@ -2,8 +2,8 @@ import SwiftUI
 
 struct GridContainer<Content: View>: View {
     let content: Content
-    var gridView: GridView
-    init(gridView: GridView, @ViewBuilder content: () -> Content) {
+    var gridView: GrdView
+    init(gridView: GrdView, @ViewBuilder content: () -> Content) {
         self.gridView = gridView
         self.content = content()
     }
@@ -16,7 +16,7 @@ struct GridContainer<Content: View>: View {
     }
 }
 #Preview {
-   let gridView = GridView(size: GridSize(), style: GridStyle())
+   let gridView = GrdView(size: GrdSize(), style: GrdStyle())
    GridContainer(gridView: gridView) {
       VStack {
          Text("TitleText")
