@@ -123,7 +123,8 @@ extension GridSize {
       return length
    }
    /**
-    * - Fixme: ⚠️️ add doc
+    * Computes the combined insets of the grid by adding the external and internal insets.
+    * - Returns: An `EdgeInsets` representing the total insets applied to the grid.
     */
    public var combinedInset: EdgeInsets {
       self.inset + self.innerInsets

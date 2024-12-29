@@ -2,7 +2,12 @@ import SwiftUI
 
 extension View {
    /**
-    * - Fixme: ⚠️️ Add doc
+    * Draws a line between two points with a specified color.
+    * - Parameters:
+    *   - a: The starting point of the line.
+    *   - b: The ending point of the line.
+    *   - color: The color of the line.
+    * - Returns: A view that represents a line drawn from point `a` to point `b` using the specified color.
     */
    func draw(a: CGPoint, b: CGPoint, color: Color) -> some View {
       Path { path in

@@ -99,7 +99,9 @@ extension GridView {
       )
    }
    /**
-    * - Fixme: ⚠️️ add doc
+    * Draws notch marks at the corners of the grid.
+    * - Parameter geom: The geometry proxy of the grid view, used to calculate positions for notch marks.
+    * - Description: This section of the GridView component is responsible for rendering the grid lines and handling user interactions within the grid. It includes methods for drawing horizontal and vertical lines, handling touch events, and updating the grid's appearance based on changes in data or user interactions.
     */
    @ViewBuilder internal func drawNotchMarks(geom: GeometryProxy) -> some View {
       Group { // Vertical

@@ -25,7 +25,7 @@ public struct GridStyle {
     */
    public let insetColor: Color
    /**
-    * - Fixme: ⚠️️ add doc
+    * The color used for the inner inset area of the grid.
     */
    public let innerInsetColor: Color
    /**

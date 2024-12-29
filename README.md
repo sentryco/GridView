@@ -10,12 +10,12 @@
 ### Problem: 
 - 🖼️ Safe-areas, sheets, platform differences, etc. all adds to the complexity of keeping margins consistent
 - 🫣 The human eye can't tell the difference between a 12px margin and a 16px margin. 
-- 🥵 Keeping grids aligned can be cumbersome with custom and dynamic sized UI
+- 🥵 Maintaining alignment in grids can be challenging with custom and dynamically sized user interfaces.
 
 ### Solution: 
 - 📐 Add GridView to your component-preview and app-preview
-- ♻️ Reuse constants in GridSizing across your previews. 
-- 🤖 Auto-adjust the grid with your own multipliers that are tied to Apples dynamic resize classes
+- 🎯 Visual margin guides help maintain consistent spacing and alignment throughout your UI
+- 🤖 Automatically adapt the grid using custom multipliers linked to Apple's dynamic resizing classes
 
 
 ### Examples:
