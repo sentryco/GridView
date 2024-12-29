@@ -8,12 +8,12 @@
 `GridView` provides a flexible way to create grid layouts in SwiftUI. Customize it to fit your application's needs and enhance your UI with structured layouts.
 
 ### Problem: 
-- 🖼️ Keeping up with consistent spacing across UI components in your app in various platforms is hard
-- 🫣 Spacing can be subtle to notice, but adds a lot to the over all aesthetics
+- 🖼️ Safe-areas, sheets, platform differences, etc. all adds to the complexity of keeping margins consistent
+- 🫣 The human eye can't tell the difference between a 12px margin and a 16px margin. 
 - 🥵 Keeping grids aligned can be cumbersome with custom and dynamic sized UI
 
 ### Solution: 
-- 📐 Add GridView to your component preview and app preview
+- 📐 Add GridView to your component-preview and app-preview
 - ♻️ Reuse constants in GridSizing across your previews. 
 - 🤖 Auto-adjust the grid with your own multipliers that are tied to Apples dynamic resize classes
 
