@@ -23,14 +23,14 @@
 You can customize the grid by adjusting the properties in `GridSize` and `GridStyle`:
 
 ```swift
-ZStack(alignment: .topLeading) {
-    GridView(size: .defaultSize, style: .defaultStyle)
-    VStack {
+GridContainer(size: .defaultSize, style: .defaultStyle) {
+   VStack {
         Text("Hello, World!")
         Text("More text")
-    }
+   }.padding()
 }
-.frame(size: GridView.defaultSize.size)
+// ⚠️️ If this is not set, the grid will be calculated based on the preexisting frame
+.frame(size: GridView.defaultSize.size) 
 ```
 
 ### Benefits of using a grid: 
@@ -48,3 +48,4 @@ ZStack(alignment: .topLeading) {
 - Add badge to org readme ✅
 - Add notch-marks that represents begining of margins ✅
 - Draw grid from innerInset ✅
+- Add GridContainer ✅
