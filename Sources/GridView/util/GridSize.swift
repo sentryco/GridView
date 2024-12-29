@@ -1,12 +1,17 @@
 import SwiftUI
 /**
  * `GridSize` is a structure that defines the dimensions and spacing of the grid in the GridView.
+ * - Important: ⚠️️ if .frame(w,h) is not set on GridView. BlockWidth and BlockHeight will be ignored, and their values calculated with frame size / hor ver count
  */
 public struct GridSize {
    /**
     * horizontal padding, vertical padding
     */
    public let inset: EdgeInsets
+   /**
+    * Inner inset
+    */
+   public let innerInsets: EdgeInsets
    /**
     * number of horizontal blocks
     */
@@ -34,8 +39,9 @@ public struct GridSize {
    /**
     * Public init
     */
-   public init(inset: EdgeInsets, horCount: Int, verCount: Int, verDivisionCount: Int, horDivisionCount: Int, blockWidth: CGFloat, blockHeight: CGFloat) {
+   init(inset: EdgeInsets, innerInsets: EdgeInsets = .init(), horCount: Int = 1, verCount: Int = 1, verDivisionCount: Int = 1, horDivisionCount: Int = 1, blockWidth: CGFloat = 24, blockHeight: CGFloat = 24) {
       self.inset = inset
+      self.innerInsets = innerInsets
       self.horCount = horCount
       self.verCount = verCount
       self.verDivisionCount = verDivisionCount
@@ -115,5 +121,11 @@ extension GridSize {
       let totLength: CGFloat = length - inset
       let length = totLength / CGFloat(count)
       return length
+   }
+   /**
+    * - Fixme: ⚠️️ add doc
+    */
+   public var combinedInset: EdgeInsets {
+      self.inset + self.innerInsets
    }
 }

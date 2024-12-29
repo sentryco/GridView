@@ -47,3 +47,4 @@ ZStack(alignment: .topLeading) {
 - Add GH action ✅
 - Add badge to org readme ✅
 - Add notch-marks that represents begining of margins ✅
+- Draw grid from innerInset

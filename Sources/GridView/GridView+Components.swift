@@ -76,26 +76,26 @@ extension GridView {
     * - Parameter geom: The geometry proxy of the grid view.
     * - Returns: A SwiftUI view that represents the inset lines of the grid.
     */
-   @ViewBuilder internal func drawInset(geom: GeometryProxy) -> some View {
+   @ViewBuilder internal func drawInset(geom: GeometryProxy, inset: EdgeInsets, color: Color) -> some View {
       draw( // verLine1
-         a: .init(x: size.inset.leading, y: size.inset.top),
-         b: .init(x: size.inset.leading, y: size.inset.top + geom.size.height - size.inset.ver),
-         color: style.insetColor
+         a: .init(x: inset.leading, y: inset.top),
+         b: .init(x: inset.leading, y: inset.top + geom.size.height - inset.ver),
+         color: color
       )
       draw( // verLine2
-         a: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: size.inset.top),
-         b: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: size.inset.top + geom.size.height - size.inset.ver),
-         color: style.insetColor
+         a: .init(x: inset.leading + geom.size.width - inset.hor, y: inset.top),
+         b: .init(x: inset.leading + geom.size.width - inset.hor, y: inset.top + geom.size.height - inset.ver),
+         color: color
       )
       draw( // horLine1
-         a: .init(x: size.inset.leading, y: size.inset.top),
-         b: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: size.inset.top),
-         color: style.insetColor
+         a: .init(x: inset.leading, y: inset.top),
+         b: .init(x: inset.leading + geom.size.width - inset.hor, y: inset.top),
+         color: color
       )
       draw( // horLine2
-         a: .init(x: size.inset.leading, y: size.inset.top + geom.size.height - size.inset.ver),
-         b: .init(x: size.inset.leading + geom.size.width - size.inset.hor, y: size.inset.top + geom.size.height - size.inset.ver),
-         color: style.insetColor
+         a: .init(x: inset.leading, y: inset.top + geom.size.height - inset.ver),
+         b: .init(x: inset.leading + geom.size.width - inset.hor, y: inset.top + geom.size.height - inset.ver),
+         color: color
       )
    }
    /**

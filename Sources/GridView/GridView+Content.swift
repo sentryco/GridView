@@ -10,19 +10,20 @@ extension GridView {
    public var body: some View {
       GeometryReader { geom in
          drawVerticals( // draw vertical lines
-            inset: size.inset,
+            inset: size.combinedInset,
             size: geom.size,
             count: size.verCount,
             innerCount: size.verDivisionCount
          )
          drawHorizontals( // draw horizontal lines
-            inset: size.inset,
+            inset: size.combinedInset,
             size: geom.size,
             count: size.horCount,
             innerCount: size.horDivisionCount
          )
-         // - Fixme: ⚠️️ pass geom.size for the bellow
-         drawInset(geom: geom) // draw inset
+         // - Fixme: ⚠️️ pass geom.size for the bellow, or is that not compatible with suporting layoutbased sizng and block+count bases sizing? keep as is?
+         drawInset(geom: geom, inset: size.combinedInset, color: style.innerInsetColor)
+         drawInset(geom: geom, inset: size.inset, color: style.insetColor) // draw inset
          drawNotchMarks(geom: geom)
       }
    }
