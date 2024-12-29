@@ -39,7 +39,7 @@ public struct GridStyle {
    /**
     * Public init
     */
-   public init(horGridColor: Color, verGridColor: Color, horDivisionColor: Color, verDivisionColor: Color, insetColor: Color, innerInsetColor: Color = .clear, strokeWidth: CGFloat, notchColor: Color = Color.red.opacity(0.5)) {
+   public init(horGridColor: Color = .clear, verGridColor: Color = .clear, horDivisionColor: Color = .clear, verDivisionColor: Color = .clear, insetColor: Color = .clear, innerInsetColor: Color = .clear, strokeWidth: CGFloat = 1, notchColor: Color = .clear) {
       self.horGridColor = horGridColor
       self.verGridColor = verGridColor
       self.horDivisionColor = horDivisionColor
@@ -60,8 +60,8 @@ extension GridStyle {
    public static let defaultStyle: GridStyle = .init(
       horGridColor: Color.blue.opacity(0.6),
       verGridColor: Color.red.opacity(0.2),
-      horDivisionColor: Color.whiteOrBlack.opacity(0.0),
-      verDivisionColor: Color.whiteOrBlack.opacity(0.0),
+//      horDivisionColor: Color.whiteOrBlack.opacity(0.0),
+//      verDivisionColor: Color.whiteOrBlack.opacity(0.0),
       insetColor: Color.green.opacity(0.4),
       innerInsetColor: Color.clear, // whiteOrBlack
       strokeWidth: 0.5
@@ -70,13 +70,9 @@ extension GridStyle {
     * Style for diagnosing frame margins
     */
    public static let frameStyle: GridStyle = .init(
-      horGridColor: .clear,
-      verGridColor: .clear,
-      horDivisionColor: .clear,
-      verDivisionColor: .clear,
-      insetColor: .green,
-      innerInsetColor: .yellow,
+      insetColor: .cyan, // .green
+      innerInsetColor: .indigo, // .yellow
       strokeWidth: 1,
-      notchColor: .red
+      notchColor: .pink // .red
    )
 }
