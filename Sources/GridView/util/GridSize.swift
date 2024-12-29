@@ -39,7 +39,7 @@ public struct GridSize {
    /**
     * Public init
     */
-   init(inset: EdgeInsets, innerInsets: EdgeInsets = .init(), horCount: Int = 1, verCount: Int = 1, verDivisionCount: Int = 1, horDivisionCount: Int = 1, blockWidth: CGFloat = 24, blockHeight: CGFloat = 24) {
+   public init(inset: EdgeInsets, innerInsets: EdgeInsets = .init(), horCount: Int = 1, verCount: Int = 1, verDivisionCount: Int = 1, horDivisionCount: Int = 1, blockWidth: CGFloat = 24, blockHeight: CGFloat = 24) {
       self.inset = inset
       self.innerInsets = innerInsets
       self.horCount = horCount
